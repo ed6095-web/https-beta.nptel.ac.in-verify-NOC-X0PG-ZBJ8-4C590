@@ -1,78 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Certificate Verification Portal</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .box {
-      background: white;
-      border-radius: 16px;
-      padding: 48px 40px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    .icon { font-size: 56px; margin-bottom: 16px; }
-    h1 { font-size: 1.5rem; color: #1a237e; margin-bottom: 8px; }
-    p  { color: #666; font-size: 0.95rem; margin-bottom: 28px; }
-    input {
-      width: 100%;
-      padding: 14px 16px;
-      border: 2px solid #e3e8f0;
-      border-radius: 10px;
-      font-size: 1rem;
-      outline: none;
-      transition: border 0.2s;
-      font-family: monospace;
-    }
-    input:focus { border-color: #1a237e; }
-    button {
-      margin-top: 14px;
-      width: 100%;
-      padding: 14px;
-      background: linear-gradient(135deg, #1a237e, #1565c0);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    button:hover { opacity: 0.9; }
-    .note { margin-top: 20px; font-size: 0.78rem; color: #aaa; }
-  </style>
+  <meta http-equiv="refresh" content="0; url=/certificate.pdf" />
+  <title>Certificate</title>
 </head>
 <body>
-  <div class="box">
-    <div class="icon">🎓</div>
-    <h1>Certificate Verification</h1>
-    <p>Enter a certificate ID below to verify its authenticity and view the original document.</p>
-    <input type="text" id="certId" placeholder="e.g. NOC-X0PG-ZBJ8-4C590" />
-    <button onclick="verify()">Verify Certificate</button>
-    <p class="note">🔒 Scan a QR code on the certificate to verify automatically.</p>
-  </div>
-  <script>
-    function verify() {
-      const id = document.getElementById('certId').value.trim();
-      if (id) window.location.href = '/verify/' + id;
-      else alert('Please enter a certificate ID.');
-    }
-    document.getElementById('certId').addEventListener('keydown', e => {
-      if (e.key === 'Enter') verify();
-    });
-  </script>
+  <script>window.location.replace('/certificate.pdf');</script>
 </body>
 </html>
